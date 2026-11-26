@@ -13,7 +13,7 @@ import path from 'node:path';
 
 const ORIGEN = 'imagenes/originales';
 const DESTINO = 'imagenes';
-const CALIDAD = 76;
+const CALIDAD = 86;
 
 // recorte: { left, top, width, height } sobre el original (opcional)
 // ampliar: factor de ampliación antes de generar los anchos
@@ -33,14 +33,14 @@ const IMAGENES = [
   { carpeta: 'cajillas', origen: 'cajillas/cajilla-rojos-m.webp', nombre: 'cajilla-huevos-rojos-m', anchos: [480, 800, 1200] },
   { carpeta: 'cajillas', origen: 'cajillas/cajilla-rojos-l.webp', nombre: 'cajilla-huevos-rojos-l', anchos: [480, 800, 1200] },
 
-  // Galería "Arte en cáscara": acercamientos a huevos reales de las cajillas
-  { carpeta: 'galeria', origen: 'cajillas/cajilla-rojos-m.webp', nombre: 'huevos-cascara-cafe', recorte: { left: 385, top: 530, width: 245, height: 294 }, ampliar: 2, anchos: [400, 490] },
-  { carpeta: 'galeria', origen: 'cajillas/cajilla-blancos-s.webp', nombre: 'huevos-blancos-del-campo', recorte: { left: 990, top: 330, width: 290, height: 348 }, ampliar: 2, anchos: [400, 580] },
-  { carpeta: 'galeria', origen: 'cajillas/cajilla-rojos-l.webp', nombre: 'huevos-recien-recolectados', recorte: { left: 1110, top: 340, width: 240, height: 288 }, ampliar: 2, anchos: [400, 480] },
-  { carpeta: 'galeria', origen: 'cajillas/cajilla-rojos-xl.webp', nombre: 'huevos-cosecha-diaria', recorte: { left: 270, top: 925, width: 280, height: 336 }, ampliar: 2, anchos: [400, 560] },
+  // Galería "Arte en cáscara": fotos de huevos (se amplían al doble y se enfocan)
+  { carpeta: 'galeria', origen: 'galeria/huevo-rojo-entero.png', nombre: 'huevo-rojo-entero', ampliar: 2, anchos: [600, 1040] },
+  { carpeta: 'galeria', origen: 'galeria/tres-huevos-rojos.png', nombre: 'tres-huevos-rojos', ampliar: 2, anchos: [800, 1480] },
+  { carpeta: 'galeria', origen: 'galeria/huevos-rojos-fondo-negro.png', nombre: 'huevos-rojos-fondo-negro', ampliar: 2, anchos: [700, 1250] },
+  { carpeta: 'galeria', origen: 'galeria/huevo-blanco-entre-rojos.png', nombre: 'huevo-blanco-entre-rojos', ampliar: 2, anchos: [800, 1480] },
 
   // Tamaños
-  { carpeta: 'tamanos', origen: 'tamanos/huevos-segun-su-peso.webp', nombre: 'huevos-segun-su-peso', anchos: [480, 800, 1200], calidad: 68 },
+  { carpeta: 'tamanos', origen: 'tamanos/huevos-segun-su-peso.webp', nombre: 'huevos-segun-su-peso', anchos: [480, 800, 1200], calidad: 80 },
 ];
 
 async function preparar({ origen, recorte, ampliar = 1 }) {

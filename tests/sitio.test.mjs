@@ -108,7 +108,7 @@ test('el menú de navegación tiene letras blancas sobre fondo oscuro', () => {
 
 test('las imágenes optimizadas pesan poco', () => {
   for (const img of todos(/srcset="([^"]+)"/g).flatMap(desdeSrcset)) {
-    assert.ok(statSync(img).size < 200 * 1024, `${img} pesa más de 200 KB`);
+    assert.ok(statSync(img).size < 250 * 1024, `${img} pesa más de 250 KB`);
   }
   assert.ok(statSync('imagenes/redes/compartir-granja-habibi.jpg').size < 300 * 1024);
 });

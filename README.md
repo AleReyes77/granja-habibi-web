@@ -28,7 +28,7 @@ granja-habibi/
 │   ├── marca/            Logo
 │   ├── granja/           Pollitos, gallinas y entregas
 │   ├── cajillas/         Cajillas de 30 huevos
-│   ├── galeria/          Acercamientos a huevos reales (Arte en cáscara)
+│   ├── galeria/          Fotos de huevos (Arte en cáscara)
 │   ├── tamanos/          Huevos según su peso
 │   ├── iconos/           Íconos del navegador
 │   ├── redes/            Imagen para compartir en WhatsApp/Facebook (JPG)
