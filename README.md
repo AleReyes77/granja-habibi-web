@@ -7,8 +7,11 @@ Sitio estático (HTML + CSS + JS, sin frameworks), pensado para hosting comparti
 
 Del diseño original: Inicio · Historia · Huevos · Arte (galería) · Testimonios · Proceso · Contacto con mapa · Pie de página.
 
-Agregadas con el mismo diseño: Granja Habibi (logo) · Cajillas de 30 (huevos blancos y rojos) · Huevos según su peso ·
-Pedidos por WhatsApp · Preguntas frecuentes.
+Agregadas con el mismo diseño: Granja Habibi (logo) · Cajillas de 30 (XL, L, M y blancos) · Huevos según su peso ·
+Nuestra granja por dentro · Huevos por mayor · Pedidos por WhatsApp · Preguntas frecuentes.
+
+Efectos: desplazamiento suave, aparición escalonada de tarjetas, barra de progreso, menú activo según la sección
+y botón para volver arriba (se desactivan si el visitante pide menos movimiento en su sistema).
 
 ## Estructura
 
@@ -21,8 +24,15 @@ granja-habibi/
 ├── sitemap.xml           Mapa del sitio (con imágenes)
 ├── manifest.webmanifest  Ícono al "agregar a pantalla de inicio"
 ├── favicon.ico / apple-touch-icon.png
-├── imagenes/             Imágenes optimizadas (AVIF + WebP, 3 tamaños)
-│   └── originales/       Imágenes originales sin modificar (no se suben al hosting)
+├── imagenes/             Imágenes optimizadas en WebP, en varios tamaños
+│   ├── marca/            Logo
+│   ├── granja/           Pollitos, gallinas y entregas
+│   ├── cajillas/         Cajillas de 30 huevos
+│   ├── galeria/          Acercamientos a huevos reales (Arte en cáscara)
+│   ├── tamanos/          Huevos según su peso
+│   ├── iconos/           Íconos del navegador
+│   ├── redes/            Imagen para compartir en WhatsApp/Facebook (JPG)
+│   └── originales/       Imágenes originales por carpeta (no se suben al hosting)
 ├── scripts/              Herramientas: optimizar imágenes, servidor local, cambiar dominio
 └── tests/                Pruebas automáticas del sitio
 ```
@@ -41,7 +51,7 @@ Requiere [Node.js](https://nodejs.org) 20 o superior.
 
 ### Agregar o cambiar una imagen
 
-1. Copiá la imagen original en `imagenes/originales/` (formato `.webp`).
+1. Copiá la imagen original en la carpeta que corresponda dentro de `imagenes/originales/`.
 2. Agregá su nombre y tamaños en `scripts/optimizar-imagenes.mjs`.
 3. Corré `npm run imagenes` y usá las versiones de `imagenes/` en el HTML.
 

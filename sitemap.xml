@@ -4,19 +4,47 @@
   <url>
     <loc>https://granjahabibi.com.ni/</loc>
     <lastmod>2026-11-25</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://granjahabibi.com.ni/imagenes/caja-huevos-rojos-1200.webp</image:loc>
-      <image:title>Cajilla de 30 huevos rojos Huevos Habibí</image:title>
+      <image:loc>https://granjahabibi.com.ni/imagenes/cajillas/cajilla-huevos-blancos-s-1200.webp</image:loc>
+      <image:title>Cajilla de 30 huevos blancos frescos de Granja Habibi en San Ramón, Matagalpa</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://granjahabibi.com.ni/imagenes/caja-huevos-blancos-1200.webp</image:loc>
-      <image:title>Cajilla de 30 huevos blancos Huevos Habibí</image:title>
+      <image:loc>https://granjahabibi.com.ni/imagenes/cajillas/cajilla-huevos-rojos-xl-1200.webp</image:loc>
+      <image:title>Cajilla de 30 huevos rojos XL Huevos Habibí</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://granjahabibi.com.ni/imagenes/huevos-segun-su-peso-1200.webp</image:loc>
+      <image:loc>https://granjahabibi.com.ni/imagenes/cajillas/cajilla-huevos-rojos-l-1200.webp</image:loc>
+      <image:title>Cajilla de 30 huevos rojos L Huevos Habibí</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://granjahabibi.com.ni/imagenes/cajillas/cajilla-huevos-rojos-m-1200.webp</image:loc>
+      <image:title>Cajilla de 30 huevos rojos M Huevos Habibí</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://granjahabibi.com.ni/imagenes/granja/gallinas-en-galera-860.webp</image:loc>
+      <image:title>Gallinas ponedoras de Granja Habibi en San Ramón, Matagalpa, Nicaragua</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://granjahabibi.com.ni/imagenes/granja/pollito-bajo-calor-870.webp</image:loc>
+      <image:title>Pollitos bajo lámpara de calor en Granja Habibi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://granjahabibi.com.ni/imagenes/granja/pollitos-en-crianza-860.webp</image:loc>
+      <image:title>Área de crianza de pollitos de Granja Habibi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://granjahabibi.com.ni/imagenes/granja/entrega-de-cajillas-870.webp</image:loc>
+      <image:title>Entrega de huevos por mayor en Matagalpa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://granjahabibi.com.ni/imagenes/tamanos/huevos-segun-su-peso-1200.webp</image:loc>
       <image:title>Clasificación de huevos según su peso XL, L, M y S</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://granjahabibi.com.ni/imagenes/marca/logo-granja-habibi-800.webp</image:loc>
+      <image:title>Logo de Granja Habibi</image:title>
     </image:image>
   </url>
 </urlset>

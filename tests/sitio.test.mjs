@@ -81,14 +81,34 @@ test('robots.txt, sitemap.xml y manifest son correctos', () => {
   for (const icono of manifest.icons) assert.ok(existsSync(icono.src), `falta ${icono.src}`);
 });
 
-test('el WhatsApp usa el número correcto', () => {
+test('el WhatsApp usa el número correcto y el botón del programador existe', () => {
   assert.match(html, /const WHATSAPP = '50587035575'/);
-  for (const e of todos(/href="(https:\/\/wa\.me\/[^"?]+)/g)) assert.equal(e, 'https://wa.me/50587035575');
+  const programador = 'https://wa.me/50576287760';
+  for (const e of todos(/href="(https:\/\/wa\.me\/[^"?]+)/g)) {
+    assert.ok(e === 'https://wa.me/50587035575' || e === programador, e);
+  }
+  assert.match(html, /class="btn-programador" href="https:\/\/wa\.me\/50576287760\?text=/);
+});
+
+test('las imágenes propias del sitio son WebP y están en su carpeta', () => {
+  const rutas = [
+    ...todos(/\ssrc="(imagenes\/[^"]+)"/g),
+    ...todos(/\ssrcset="([^"]+)"/g).flatMap(desdeSrcset),
+  ];
+  assert.ok(rutas.length > 20);
+  for (const ruta of rutas) {
+    assert.match(ruta, /^imagenes\/(marca|granja|cajillas|galeria|tamanos)\/[a-z0-9-]+\.webp$/, ruta);
+  }
+});
+
+test('el menú de navegación tiene letras blancas sobre fondo oscuro', () => {
+  assert.match(html, /\.nav-links a \{[^}]*color: #ffffff;/);
+  assert.match(html, /\.navbar\.scrolled \{[^}]*background-color: rgba\(40, 54, 24/);
 });
 
 test('las imágenes optimizadas pesan poco', () => {
   for (const img of todos(/srcset="([^"]+)"/g).flatMap(desdeSrcset)) {
     assert.ok(statSync(img).size < 200 * 1024, `${img} pesa más de 200 KB`);
   }
-  assert.ok(statSync('imagenes/compartir-granja-habibi.jpg').size < 300 * 1024);
+  assert.ok(statSync('imagenes/redes/compartir-granja-habibi.jpg').size < 300 * 1024);
 });
