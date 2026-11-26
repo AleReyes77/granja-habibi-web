@@ -1,6 +1,5 @@
 // Servidor local para probar el sitio (sin dependencias).
-// Imita los encabezados de producción del .htaccess (incluida la CSP)
-// para detectar errores antes de subir al hosting.
+// Imita el comportamiento del .htaccess (página 404 y carpetas bloqueadas).
 // Uso: npm start   (http://localhost:8080)
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
@@ -9,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PUERTO = Number(process.env.PORT) || 8080;
-const BLOQUEADOS = /^\/(src-images|scripts|tests|node_modules|\.git)(\/|$)|^\/(package(-lock)?\.json|README\.md)$/;
+const BLOQUEADOS = /^\/(imagenes\/originales|scripts|tests|node_modules|\.git)(\/|$)|^\/(package(-lock)?\.json|README\.md)$/;
 
 const TIPOS = {
   '.html': 'text/html; charset=utf-8',
@@ -27,14 +26,11 @@ const TIPOS = {
   '.svg': 'image/svg+xml',
 };
 
-const CSP = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'self'";
-
 const servidor = createServer(async (req, res) => {
   const ruta = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
   const cabeceras = {
     'X-Content-Type-Options': 'nosniff',
     'Referrer-Policy': 'strict-origin-when-cross-origin',
-    'Content-Security-Policy': CSP,
   };
 
   let archivo = path.normalize(path.join(RAIZ, ruta === '/' ? 'index.html' : ruta));

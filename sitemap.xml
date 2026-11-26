@@ -7,15 +7,15 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://granjahabibi.com.ni/img/caja-huevos-rojos-1200.webp</image:loc>
-      <image:title>Cajilla de 30 huevos rojos Granja Habibi</image:title>
+      <image:loc>https://granjahabibi.com.ni/imagenes/caja-huevos-rojos-1200.webp</image:loc>
+      <image:title>Cajilla de 30 huevos rojos Huevos Habibí</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://granjahabibi.com.ni/img/caja-huevos-blancos-1200.webp</image:loc>
-      <image:title>Cajilla de 30 huevos blancos Granja Habibi</image:title>
+      <image:loc>https://granjahabibi.com.ni/imagenes/caja-huevos-blancos-1200.webp</image:loc>
+      <image:title>Cajilla de 30 huevos blancos Huevos Habibí</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://granjahabibi.com.ni/img/tamanos-huevos-1200.webp</image:loc>
+      <image:loc>https://granjahabibi.com.ni/imagenes/huevos-segun-su-peso-1200.webp</image:loc>
       <image:title>Clasificación de huevos según su peso XL, L, M y S</image:title>
     </image:image>
   </url>

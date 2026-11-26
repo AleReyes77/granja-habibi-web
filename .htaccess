@@ -23,7 +23,7 @@ ErrorDocument 404 /404.html
   RewriteRule ^index\.html$ / [L,R=301]
 
   # No exponer archivos de desarrollo
-  RewriteRule ^(src-images|scripts|tests|node_modules)(/|$) - [F,L]
+  RewriteRule ^(imagenes/originales|scripts|tests|node_modules)(/|$) - [F,L]
   RewriteRule ^(package(-lock)?\.json|README\.md|\.git.*)$ - [F,L]
 </IfModule>
 
@@ -75,5 +75,4 @@ ErrorDocument 404 /404.html
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
   Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
 </IfModule>

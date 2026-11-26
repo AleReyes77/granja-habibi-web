@@ -5,25 +5,24 @@ Sitio estático (HTML + CSS + JS, sin frameworks), pensado para hosting comparti
 
 ## Secciones
 
-Inicio · Beneficios · Nosotros · Productos (huevos blancos, rojos y por mayor) · Tamaños según peso ·
-Proceso artesanal · Venta por mayor · Zonas de entrega · Testimonios · Pedido por WhatsApp ·
-Preguntas frecuentes · Contacto con mapa · Pie de página · Botón flotante de WhatsApp.
+Del diseño original: Inicio · Historia · Huevos · Arte (galería) · Testimonios · Proceso · Contacto con mapa · Pie de página.
+
+Agregadas con el mismo diseño: Granja Habibi (logo) · Cajillas de 30 (huevos blancos y rojos) · Huevos según su peso ·
+Pedidos por WhatsApp · Preguntas frecuentes.
 
 ## Estructura
 
 ```
 granja-habibi/
-├── index.html            Página principal
+├── index.html            Página principal (HTML, CSS y JS del diseño original + secciones nuevas)
 ├── 404.html              Página de error
 ├── .htaccess             HTTPS, compresión, caché y seguridad (Apache)
 ├── robots.txt            Reglas para buscadores
 ├── sitemap.xml           Mapa del sitio (con imágenes)
 ├── manifest.webmanifest  Ícono al "agregar a pantalla de inicio"
 ├── favicon.ico / apple-touch-icon.png
-├── css/estilos.css
-├── js/main.js
-├── img/                  Imágenes optimizadas (AVIF + WebP, 3 tamaños)
-├── src-images/           Imágenes originales (no se suben al hosting)
+├── imagenes/             Imágenes optimizadas (AVIF + WebP, 3 tamaños)
+│   └── originales/       Imágenes originales sin modificar (no se suben al hosting)
 ├── scripts/              Herramientas: optimizar imágenes, servidor local, cambiar dominio
 └── tests/                Pruebas automáticas del sitio
 ```
@@ -35,35 +34,35 @@ Requiere [Node.js](https://nodejs.org) 20 o superior.
 | Comando | Qué hace |
 |---|---|
 | `npm install` | Instala la herramienta de optimización de imágenes |
-| `npm start` | Abre el sitio en `http://localhost:8080` con los mismos encabezados de seguridad que producción |
+| `npm start` | Abre el sitio en `http://localhost:8080` |
 | `npm test` | Revisa enlaces, imágenes, SEO, datos estructurados y peso de archivos |
-| `npm run imagenes` | Regenera `img/` a partir de `src-images/` |
+| `npm run imagenes` | Regenera `imagenes/` a partir de `imagenes/originales/` |
 | `npm run dominio -- https://tudominio.com.ni` | Cambia el dominio en todos los archivos SEO |
 
 ### Agregar o cambiar una imagen
 
-1. Copiá la imagen original en `src-images/` (formato `.webp`).
+1. Copiá la imagen original en `imagenes/originales/` (formato `.webp`).
 2. Agregá su nombre y tamaños en `scripts/optimizar-imagenes.mjs`.
-3. Corré `npm run imagenes` y usá las versiones de `img/` en el HTML con `<picture>`.
+3. Corré `npm run imagenes` y usá las versiones de `imagenes/` en el HTML.
 
 ## Publicar en el hosting
 
 1. Si el dominio no es `granjahabibi.com.ni`, corré `npm run dominio -- https://tu-dominio`.
 2. Subí **solo** estos archivos a `public_html/` (por el Administrador de archivos de cPanel o FTP):
    `index.html`, `404.html`, `.htaccess`, `robots.txt`, `sitemap.xml`, `manifest.webmanifest`,
-   `favicon.ico`, `apple-touch-icon.png` y las carpetas `css/`, `js/`, `img/`.
+   `favicon.ico`, `apple-touch-icon.png` y la carpeta `imagenes/` (sin la subcarpeta `originales/`).
 3. Activá el certificado SSL gratuito (AutoSSL / Let's Encrypt) en cPanel; el `.htaccess` redirige todo a HTTPS.
-4. Si el hosting usa **Nginx** en lugar de Apache, pedí al soporte que active compresión gzip, caché larga para `/img/` y la página `404.html`.
+4. Si el hosting usa **Nginx** en lugar de Apache, pedí al soporte que active compresión gzip, caché larga para `/imagenes/` y la página `404.html`.
 
 ## SEO: pasos después de publicar
 
 1. **Google Search Console**: agregá el dominio, verificalo y enviá `https://tu-dominio/sitemap.xml`.
-2. **Perfil de Empresa en Google (Google Maps)**: creá o reclamá la ficha "Granja Habibi" con la misma
+2. **Perfil de Empresa en Google (Google Maps)**: creá o reclamá la ficha "Huevos Habibí / Granja Habibi" con la misma
    dirección, teléfono y horario que aparecen en el sitio, y pegá el enlace del sitio web. Es lo que más
    ayuda para aparecer en búsquedas como "huevos en Matagalpa".
-3. Pedí a clientes reales que dejen reseñas en Google Maps y reemplazá los testimonios del sitio por reseñas reales.
+3. Pedí a clientes reales que dejen reseñas en Google Maps.
 4. Probá los datos estructurados en la [Prueba de resultados enriquecidos](https://search.google.com/test/rich-results).
-5. Compartí el enlace en Facebook, Instagram y el estado de WhatsApp Business (la vista previa usa `img/og-granja-habibi.jpg`).
+5. Compartí el enlace en Facebook, Instagram y el estado de WhatsApp Business (la vista previa usa `imagenes/compartir-granja-habibi.jpg`).
 
 ## Datos del negocio que conviene revisar
 
