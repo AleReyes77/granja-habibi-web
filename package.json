@@ -1,0 +1,21 @@
+{
+  "name": "granja-habibi",
+  "version": "1.0.0",
+  "description": "Sitio web de Granja Habibi: huevos frescos en San Ramón, Matagalpa, Nicaragua",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node scripts/servidor.mjs",
+    "test": "node --test tests/sitio.test.mjs",
+    "imagenes": "node scripts/optimizar-imagenes.mjs",
+    "dominio": "node scripts/cambiar-dominio.mjs"
+  },
+  "author": "Granja Habibi",
+  "license": "UNLICENSED",
+  "type": "module",
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  },
+  "private": true
+}
